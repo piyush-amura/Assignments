@@ -1,5 +1,4 @@
-def solution(hash)
-	
+def solution(hash)	
 	hash=hash.collect do |key,value|
 		 "#{key} = #{value}"	
 	end
