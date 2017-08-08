@@ -1,9 +1,8 @@
 def solution(hash)
-	str=""
-	hash.each do |key,value|
-		str << "#{key} = #{value},"	
+	
+	hash=hash.collect do |key,value|
+		 "#{key} = #{value}"	
 	end
-	str[str.length-1]=""
-	str	
+	hash.join(",")
 end	
 p solution({a: 1, b: '2'})
