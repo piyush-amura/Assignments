@@ -12,7 +12,7 @@
   1. Ruby primer and Primer Ascent course from RubyMonk
   2. irb
   3. Ruby Doc (partial)
-
+in
 - From step 3
 
   1. web fundamentals
@@ -40,3 +40,20 @@
 
 * completed developed 2 OOPS based apps in ruby
 * codewars challenges in ruby
+
+
+
+
+Ruby Topics:
+
+1.ruby objects ,syntactic sugar
+2.string operations
+3.conditions and loops 
+4.hashes
+5.classes and oop (Inheritance)
+6.Modules
+7.I/O and file handling
+8.Ruby's object model
+9.literal ,constants and variables
+10.benchmarks
+11.blocks, lambda and procs

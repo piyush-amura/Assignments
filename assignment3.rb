@@ -5,7 +5,7 @@ def sum_of_consecutive_no(size=0)
 	size.negative? ?  Array.new(size.abs+1) { |i| -(i*(i+1)/2)} : Array.new(size.abs+1) { |i| i*(i+1)/2 }
 end	
 	
-puts Benchmark.measure{sum_of_consecutive_no(5)} 
+puts sum_of_consecutive_no(5) 
 
 # sample inputs
 # p sum_of_consecutive_no(5)
