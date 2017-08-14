@@ -57,3 +57,4 @@ Ruby Topics:
 9.literal ,constants and variables
 10.benchmarks
 11.blocks, lambda and procs
+12. instances and attribute accessors

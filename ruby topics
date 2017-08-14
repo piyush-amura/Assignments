@@ -1,3 +1,21 @@
 1.ruby objects ,syntactic sugar
 2.string operations
-3.	
+
+
+=> dont use STANDARD_ERRORS
+
+pull= fetch + merge
+
+git stash - shift branches without commits
+
+git stash list,pop
+
+git conflicts
+
+require vs load
+
+super - sends all arguments
+super() - sends no arguments
+super(p)
+class eval vs instance eval
+send eval
