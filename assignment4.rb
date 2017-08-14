@@ -48,9 +48,9 @@ H = { 'UUC' => 'F', 'UUU' => 'F',
 # function which translates the RNA into its protein sequence.
 def protein(str = '')
   # to handle errorneous data
-  flag = nil
-  str.scan(/[A-Z]{3}/).map{ |s| H[s] == 'Stop' ? (flag = false;nil) : H[s] if flag.nil? }.compact.join
+  str.scan(/[A-Z]{3}/).take_while{ |s| H[s]!='Stop'}.map{|s| H[s] }.join
 end
+# puts Benchmark.measure{ protein('UGCGAUGAAUAAGCUCGCUCC') }
 
 puts protein('UGCGAUGAAUAAGCUCGCUCC')
 puts protein('UGC GAU GAA UAA GCU CGC UCC') # ->  CDE
