@@ -43,8 +43,9 @@ H={
     # Stop codon
     'UAA'=>'Stop', 'UGA'=>'Stop', 'UAG'=>'Stop'
 }
-
-def protein(str)
-	str.scan(/.{3}/).map{|s|  H[s] unless H[s]=='stop'  }.compact.join
+# function which translates the RNA into its protein sequence.
+def protein(str='')
+  str.scan(/.{3}/).map{ |s|  H[s] unless H[s]=='stop'  }.compact.join
 end	
 p protein('UGCGAUGAAUGGGCUCGCUCC')
+p protein()
