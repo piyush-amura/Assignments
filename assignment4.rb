@@ -1,3 +1,4 @@
+require 'benchmark'
 # dictionary 
 H={
 	# Phenylalanine
@@ -43,9 +44,11 @@ H={
     # Stop codon
     'UAA'=>'Stop', 'UGA'=>'Stop', 'UAG'=>'Stop'
 }
+
 # function which translates the RNA into its protein sequence.
 def protein(str='')
-  str.scan(/.{3}/).map{ |s|  H[s] unless H[s]=='stop'  }.compact.join
-end	
-p protein('UGCGAUGAAUGGGCUCGCUCC')
-p protein()
+    # to handle errorneous data   
+    str.scan(/[A-Z]{3}/).map{ |s| H[s]=='Stop' ? ($flag=false;nil) : H[s] if $flag.nil? }.compact.join
+end
+# puts Benchmark.measure{protein('UGCGAUGAAUAAGCUCGCUCC')}
+p protein('UGCGAUGAAUAAGCUCGCUCC')    
