@@ -46,15 +46,16 @@ String.prototype.humanize = function () {
     {
       if(human_dict[key]==10){
         if(round_up == 1){
-          amount_in_words += "and " + single_numbers[(amount%human_dict[key])+9]
+          amount_in_words += single_numbers[(amount%human_dict[key])+10]
           flag=true
         }else{
-          amount_in_words += "and " + tens[round_up-1] 
+          amount_in_words += tens[round_up-1] 
         }    
       }
       else{
        amount_in_words += assign_string(round_up)+" ";
        amount_in_words += key+plurarize(round_up)+", ";
+       console.log(plurarize(round_up))
       }
     }
     if(human_dict[key]==1 && flag == false)                 // condition for unit place 

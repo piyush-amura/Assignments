@@ -64,3 +64,17 @@
 6th september
 1. done with controller specs
 2. worked on code coverage using simplecov (99.2 % coverage)
+
+7th september
+1. learnt about mongodb from documentation
+2. learnt about mongoid and CRUD methods
+
+8th September
+1. completed the model part of the rails app by mongo
+2. subsequent changes to the controller code
+
+11th September
+1. started tutorials for javascript
+2. partially completed the ruby assignment
+
+12th September
