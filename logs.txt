@@ -35,3 +35,32 @@
 28th august
 1. done with the model with improvements
 2. gone through rails guide regarding rails routing and REST. 
+
+29th august
+1. installed  device for user controller
+2. completed venue part of the controller
+3. gone throgh rails guide for layouts and partial views
+
+30th august
+1. modified user controller using namespace in the project
+2. completed meeting controller CRUD operations for both namespace
+
+31st august
+1. added functionalities in the controllers
+2. done some view work needed in the project 
+
+1st september
+1.installed bootstrap for better view
+2.code optimisation and added functionalities in the controllers
+
+4th september
+1.started learning documentation for Rspec model
+2.done with model specs
+
+5th september
+1. started learning documentation for Rspec controller and FactoryGirl
+2. half of the controller specs written
+
+6th september
+1. done with controller specs
+2. worked on code coverage using simplecov (99.2 % coverage)
