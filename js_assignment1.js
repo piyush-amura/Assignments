@@ -1,5 +1,5 @@
 var single_numbers = [' ','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ', 'Eleven', 'Twelve ', 'Thirteen ', 'Fourteen', 'Fifteen' , 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
-var tens = ['', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty','Seventy','Eighty','Ninety'];
+var tens = ['', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty','Seventy','Eighty','Ninty'];
 var human_dict = { Crore: 10000000, Lac: 100000,Thousand: 1000,Hundred: 100, Ten: 10, One: 1 };
 
 function input_validations(str){
@@ -17,7 +17,7 @@ function input_validations(str){
 }
 
 function plurarize(num){
-  return num>1 ? 's':''
+  return num>1 ? 's' : ''
 }
 
 
@@ -55,20 +55,20 @@ String.prototype.humanize = function () {
       else{
        amount_in_words += assign_string(round_up)+" ";
        amount_in_words += key+plurarize(round_up)+", ";
-       console.log(plurarize(round_up))
       }
     }
     if(human_dict[key]==1 && flag == false)                 // condition for unit place 
     {
       amount_in_words += " "+single_numbers[round_up];
     }
-    if(reminder>1)                    // update amount 
+    if(reminder>1) 
     {
       amount = amount%human_dict[key];
     }  
   }
-  if (amount_in_words.endsWith(',') ){
-   amount_in_words.replace(/\,$/,'')
+  amount_in_words=amount_in_words.trim();
+  if (amount_in_words[amount_in_words.length-1]==','){
+    amount_in_words=amount_in_words.substring(0, amount_in_words.length-1)
   }
   console.log(amount_in_words);
 };
