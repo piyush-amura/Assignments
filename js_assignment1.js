@@ -4,9 +4,9 @@ var HumanDict = { Crore: 10000000, Lac: 100000,Thousand: 1000,Hundred: 100, Ten:
 
 
 function input_validations(str){
-  
+
   if(/^\d*$/.test(str)== false){
-  	console.log('not a valid number')
+  	console.log('not a valid number');
   	return false;
   }
 
@@ -43,7 +43,7 @@ String.prototype.humanize = function () {
   	return;    
   }
   var AmountInWords = [];
-  var amount = parseInt(this);
+  var amount = parseInt(this.replace(/^0+/,''));
   var flag = false, reminder, round_up;
   for (let key in HumanDict) 
   {
