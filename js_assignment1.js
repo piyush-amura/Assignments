@@ -3,7 +3,7 @@ var tens = ['', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty','Seventy','Eighty'
 var HumanDict = { Crore: 10000000, Lac: 100000,Thousand: 1000,Hundred: 100, Ten: 10, One: 1 };
 
 
-function input_validations(str){
+function InputValidations(str){
 
   if(/^\d*$/.test(str)== false){
   	console.log('not a valid number');
@@ -27,7 +27,7 @@ function plurarize(num){
 }
 
 
-function assign_string(num){ 
+function AssignString(num){ 
  if (num<100 && num>=20) {
    num = (tens[parseInt(num/10)-1]+" "+SingleNumbers[(num%10)]);
  }
@@ -39,36 +39,36 @@ function assign_string(num){
 
 String.prototype.humanize = function () {
 	
-  if(input_validations(this.replace(/^0+/,'')) == false){
+  if(InputValidations(this.replace(/^0+/,'')) == false){
   	return;    
   }
   var AmountInWords = [];
   var amount = parseInt(this.replace(/^0+/,''));
-  var flag = false, reminder, round_up;
+  var flag = false, reminder, RoundUp;
   for (let key in HumanDict) 
   {
     reminder = amount/HumanDict[key];
-    round_up = parseInt(reminder);
+    RoundUp = parseInt(reminder);
     if (reminder < HumanDict[key] &&  reminder > 1  ) 
     {
       //allocating HumanDictionary word for tenth places 
       if(HumanDict[key] == 10){
         //for number between 10 and 20
-        if(round_up == 1){     
+        if(RoundUp == 1){     
           AmountInWords += SingleNumbers[(amount%10) + 10];
           flag = true;
         }else{
-          AmountInWords += tens[round_up-1]; 
+          AmountInWords += tens[RoundUp-1]; 
         }    
       }
       else{
-       AmountInWords += assign_string(round_up) + ' ';
-       AmountInWords += key + plurarize(round_up) + ', ';
+       AmountInWords += AssignString(RoundUp) + ' ';
+       AmountInWords += key + plurarize(RoundUp) + ', ';
       }
     }
     if(HumanDict[key] == 1 && flag == false)                 // condition for unit place 
     {
-      AmountInWords += " " + SingleNumbers[round_up];
+      AmountInWords += " " + SingleNumbers[RoundUp];
     }
     if(reminder>1) 
     {
