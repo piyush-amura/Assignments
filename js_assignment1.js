@@ -1,9 +1,9 @@
-var SingleNumbers = [' ','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ', 'Eleven', 'Twelve ', 'Thirteen ', 'Fourteen', 'Fifteen' , 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+var singleNumbers = [' ','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ','Ten ', 'Eleven', 'Twelve ', 'Thirteen ', 'Fourteen', 'Fifteen' , 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
 var tens = ['', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty','Seventy','Eighty','Ninty'];
-var HumanDict = { Crore: 10000000, Lac: 100000,Thousand: 1000,Hundred: 100, Ten: 10, One: 1 };
+var humanDict = { Crore: 10000000, Lac: 100000,Thousand: 1000,Hundred: 100, Ten: 10, One: 1 };
 
 
-function InputValidations(str){
+function inputValidations(str){
 
   if(/^\d*$/.test(str)== false){
   	console.log('not a valid number');
@@ -27,58 +27,58 @@ function plurarize(num){
 }
 
 
-function AssignString(num){ 
+function assignString(num){ 
  if (num<100 && num>=20) {
-   num = (tens[parseInt(num/10)-1]+" "+SingleNumbers[(num%10)]);
+   num = (tens[parseInt(num/10)-1]+" "+singleNumbers[(num%10)]);
  }
  else if (num<20 && num>=0) {
-   num = SingleNumbers[num]; 
+   num = singleNumbers[num]; 
  }
  return num;
 }
 
 String.prototype.humanize = function () {
 	
-  if(InputValidations(this.replace(/^0+/,'')) == false){
+  if(inputValidations(this.replace(/^0+/,'')) == false){
   	return;    
   }
-  var AmountInWords = [];
+  var amountInWords = [];
   var amount = parseInt(this.replace(/^0+/,''));
-  var flag = false, reminder, RoundUp;
-  for (let key in HumanDict) 
+  var flag = false, reminder, roundUp;
+  for (let key in humanDict) 
   {
-    reminder = amount/HumanDict[key];
-    RoundUp = parseInt(reminder);
-    if (reminder < HumanDict[key] &&  reminder > 1  ) 
+    reminder = amount/humanDict[key];
+    roundUp = parseInt(reminder);
+    if (reminder < humanDict[key] &&  reminder > 1  ) 
     {
-      //allocating HumanDictionary word for tenth places 
-      if(HumanDict[key] == 10){
+      //allocating humanDictionary word for tenth places 
+      if(humanDict[key] == 10){
         //for number between 10 and 20
-        if(RoundUp == 1){     
-          AmountInWords += SingleNumbers[(amount%10) + 10];
+        if(roundUp == 1){     
+          amountInWords += singleNumbers[(amount%10) + 10];
           flag = true;
         }else{
-          AmountInWords += tens[RoundUp-1]; 
+          amountInWords += tens[roundUp-1]; 
         }    
       }
       else{
-       AmountInWords += AssignString(RoundUp) + ' ';
-       AmountInWords += key + plurarize(RoundUp) + ', ';
+       amountInWords += assignString(roundUp) + ' ';
+       amountInWords += key + plurarize(roundUp) + ', ';
       }
     }
-    if(HumanDict[key] == 1 && flag == false)                 // condition for unit place 
+    if(humanDict[key] == 1 && flag == false)                 // condition for unit place 
     {
-      AmountInWords += " " + SingleNumbers[RoundUp];
+      amountInWords += " " + singleNumbers[roundUp];
     }
     if(reminder>1) 
     {
-      amount = amount%HumanDict[key];
+      amount = amount%humanDict[key];
     }  
   }
-  //remove unnecessary spaces from AmountInWords
-  AmountInWords = AmountInWords.trim();
-  if (AmountInWords[AmountInWords.length-1]==','){
-    AmountInWords=AmountInWords.substring(0, AmountInWords.length-1)
+  //remove unnecessary spaces from amountInWords
+  amountInWords = amountInWords.trim();
+  if (amountInWords[amountInWords.length-1]==','){
+    amountInWords=amountInWords.substring(0, amountInWords.length-1)
   }
-  console.log(AmountInWords);
+  console.log(amountInWords);
 };

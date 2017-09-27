@@ -1,14 +1,14 @@
-16th august 
+16th august
 1. design of the ruby oops assignment.
-2. Ruby problem practice 
+2. Ruby problem practice
 
 17th august
-1. started coding for ruby oops assignments 
+1. started coding for ruby oops assignments
 2. learnt about class instance variables
 3. applied exception handling for most of the validation of the assignment
 
 18th august
-1. optimisation and data validation of the oops assignment code 
+1. optimisation and data validation of the oops assignment code
 2. added documentation to the code
 
 21th august
@@ -34,7 +34,7 @@
 
 28th august
 1. done with the model with improvements
-2. gone through rails guide regarding rails routing and REST. 
+2. gone through rails guide regarding rails routing and REST.
 
 29th august
 1. installed  device for user controller
@@ -47,7 +47,7 @@
 
 31st august
 1. added functionalities in the controllers
-2. done some view work needed in the project 
+2. done some view work needed in the project
 
 1st september
 1.installed bootstrap for better view
@@ -78,3 +78,52 @@
 2. partially completed the ruby assignment
 
 12th September
+Completed the JavaScript assignment of humanize()
+Read JavaScripts concepts related to Classes, Objects, Iterators, etc.
+Read underscore library(support both functional helpers: map, filter, invoke — as well as more specialized helpers
+
+13th September
+Read more in detail about JavaScript(Introduction to JavaScript codeacademy)
+Read about jquery and ajax
+Started with Backbone.js
+
+14th September
+Read about backbone.js models and views
+Implemented backbone.js models in rails application
+Updated and improved rails assignment(college_management)
+and added documentation using yardgen
+
+15th September
+Read about backbone.js models and collections
+Implemented models and collection of backbone
+
+18th September
+Implemented Backbone.js events on models and collections
+Presented a seminar on 'ORM in rails'
+worked on questions, doubts and tasks given in the seminar
+
+19th September
+Added marionette js to project
+Read about marionette js and routing
+Implemented Marionette.js routers and controllers
+Read about views, itemsviews of marionette js
+
+20th September
+Implemented venue view without jst
+Implemented venue view using jst
+
+21th September
+Implemented venue index view in item view, layout view and collection view
+
+22th September
+implemented composite view for products
+Started with html parser ruby assignment
+
+25th September
+Completed implementation of html parser in ruby
+
+26th September
+Explored more in jquery, js and marionette views
+
+27th September
+Added marionette views for CRUD in venues
